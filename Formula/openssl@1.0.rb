@@ -56,7 +56,7 @@ class OpensslAT10 < Formula
 
   def post_install
     keychains = %w[
-      /System/Library/Keychains/SystemRootCertificates.keychain
+      /etc/pki/tls/certs/ca-bundle.crt
     ]
 
     certs_list = `security find-certificate -a -p #{keychains.join(" ")}`
